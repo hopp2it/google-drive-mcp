@@ -1,0 +1,53 @@
+name: google-drive-mcp
+slug: google-drive-mcp
+type: mcp-server
+role: Local fork of @piotr-agier/google-drive-mcp, providing MCP access to Google Drive, Docs, Sheets, Slides, and Calendar via OAuth.
+live_url: null
+owner: QNTx Labs (Jeff Hopp); upstream package by Piotr Agier
+deploy_target: npm/local MCP server via dist/index.js or google-drive-mcp bin
+brand_manifest: not applicable - MCP server infrastructure, not a content property
+mcp_allowlist:
+  # Intentionally empty. This repo is the Google Drive MCP server implementation;
+  # it does not grant any property permission to call Google Drive. Consuming
+  # properties must declare Google_Drive in their own property-context.yaml with
+  # mcp_scopes for account/root/token boundaries.
+tool_scoping:
+  crm: null
+  email_marketing: null
+  analytics: null
+  ad_platforms: null
+  pm: null
+tech_stack:
+  framework: TypeScript (Node.js >=18, MCP SDK stdio transport)
+  runtime: Node.js
+  deploy: npm/local MCP server via dist/index.js or google-drive-mcp bin
+  key_integrations:
+    - Google Drive API
+    - Google Docs API
+    - Google Sheets API
+    - Google Slides API
+    - Google Calendar API
+    - OAuth 2.0 desktop auth with token refresh
+    - MCP (Model Context Protocol) stdio transport
+playbooks: []
+local_constraints:
+  - This repo is infrastructure only. Do not infer that any client or property may use Google Drive from this server fork existing locally.
+  - Google OAuth credentials and refresh tokens are secrets. Never commit or paste credential JSON, token stores, client IDs tied to private contexts, or refresh tokens.
+  - Consuming properties own their own Google_Drive mcp_allowlist and mcp_scopes declarations; cross-property Drive access is not allowed.
+  - Work on master for doc-standard maintenance; avoid mixing docs into active feature branches.
+  - Run npm run build and npm test after source changes; docs-only changes may verify with audit-docs plus generated-instruction checks.
+layers:
+  brand_snapshot: not_applicable
+  brand_depth: not_applicable
+  brand_assets: not_applicable
+  collateral: not_applicable
+  reference: not_applicable
+  operations: not_applicable
+  local_playbooks: not_applicable
+  active_work: not_applicable
+  named_subprojects: not_applicable
+  superpowers: not_applicable
+  sessions: not_applicable
+  scripts: applies
+  sensitive: not_applicable
+  business_reality: not_applicable
