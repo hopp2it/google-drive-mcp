@@ -475,6 +475,19 @@ When binding to `127.0.0.1` (default), DNS rebinding protection is automatically
 - **authListScopes** - Show configured/requested scopes, granted scopes, missing scopes, and presets
 - **authTestFileAccess** - Test Drive access (optionally against a specific `fileId`)
 
+#### Shortcuts and File Locks (v1.7.0)
+- **createShortcut** - Create a shortcut to a file or folder
+  - `targetFileId`: File or folder ID to link to
+  - `parentFolderId`: Folder ID or path where the shortcut will be created (optional)
+  - `shortcutName`: Custom shortcut name (optional, defaults to original file name)
+
+- **lockFile** - Lock a file by setting content restrictions
+  - `fileId`: File ID to lock
+  - `reason`: Reason shown to editors (optional)
+  - `ownerRestricted`: Only the owner can unlock (optional, default false)
+
+- **unlockFile** - Remove content restrictions from a locked file
+  - `fileId`: File ID to unlock
 - **uploadFile** - Upload a local file (any type: image, audio, video, PDF, etc.) to Google Drive
   - `localPath`: Absolute path to the local file
   - `name`: File name in Drive (optional, defaults to local filename)
@@ -895,6 +908,30 @@ When binding to `127.0.0.1` (default), DNS rebinding protection is automatically
   - `mimeType`: `PNG` or `JPEG` (optional, default: `PNG`)
   - `size`: `SMALL`, `MEDIUM`, or `LARGE` (optional, default: `LARGE`)
 
+- **insertSlidesImageFromUrl** - Insert an image into a slide from a public URL
+  - `presentationId`: Presentation ID
+  - `pageObjectId`: Slide/page object ID
+  - `imageUrl`: Public image URL
+  - `x`, `y`, `width`, `height`: Position and size in EMU (optional)
+
+- **getSlideElementInfo** - Get position, size, and transform details for slide elements
+  - `presentationId`: Presentation ID
+  - `slideObjectId`: Slide object ID (optional; omit for all slides)
+
+- **moveSlideElement** - Move or resize a slide element
+  - `presentationId`: Presentation ID
+  - `objectId`: Element object ID
+  - `x`, `y`, `width`, `height`: New position and/or size in EMU (optional)
+
+- **deleteSlideElement** - Delete an element from a slide
+  - `presentationId`: Presentation ID
+  - `objectId`: Element object ID
+
+- **insertSlidesLocalImage** - Upload a local image and insert it into a slide
+  - `presentationId`: Presentation ID
+  - `pageObjectId`: Slide/page object ID
+  - `localImagePath`: Absolute local image path
+  - `x`, `y`, `width`, `height`: Position and size in EMU (optional)
 ### Google Calendar
 - **listCalendars** - List all accessible Google Calendars
   - `showHidden`: Include hidden calendars (optional, default: false)

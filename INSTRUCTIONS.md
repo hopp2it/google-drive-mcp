@@ -101,7 +101,7 @@ not applicable - MCP server infrastructure, not a content property
 
 Every AI-authored commit ends with:
 
-    Co-Authored-By: SYNTAX AI v6.6.0 (using {exact model name}) <syntax@qntxlabs.com>
+    Co-Authored-By: SYNTAX AI v6.7.0 (using {exact model name}) <syntax@qntxlabs.com>
 
 See [../../syntax/rules/git-commits.md](../../syntax/rules/git-commits.md).
 
