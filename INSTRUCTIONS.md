@@ -77,6 +77,10 @@ Close is not complete until:
 6. touched repos have been committed and pushed per shipping discipline
 7. any new memory has been written and indexed
 
+One close per working session (decided 2026-08-19): close once, at the end; post-close edits go in a
+follow-up commit, no re-close; `--amend-last` updates a still-uncommitted close in place. A same-day
+re-close with the same summary is flagged `duplicate-close` in the weekly hygiene report.
+
 ## Principles
 
 The shared principles live at [../../qntx/corpus/PRINCIPLES.md](../../qntx/corpus/PRINCIPLES.md). Cite them by number when they apply.
@@ -101,7 +105,7 @@ not applicable - MCP server infrastructure, not a content property
 
 Every AI-authored commit ends with:
 
-    Co-Authored-By: SYNTAX AI v6.8.0 (using {exact model name}) <syntax@qntxlabs.com>
+    Co-Authored-By: SYNTAX AI v6.10.0 (using {exact model name}) <syntax@qntxlabs.com>
 
 See [../../syntax/rules/git-commits.md](../../syntax/rules/git-commits.md).
 
